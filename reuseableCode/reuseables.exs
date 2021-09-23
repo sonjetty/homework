@@ -18,7 +18,6 @@ defmodule Reuseables do
     #define selectors
     nameField = find_element(:xpath, "//*[@name = 'username']")
     pswdField = find_element(:name, "password")
-    #loginButton = find_element(:xpath, "//i[contains (text() , 'Login')]")
 
     fill_field(nameField, username)
 
@@ -39,15 +38,15 @@ defmodule Reuseables do
     firstLetterBox = find_element(:xpath, "//header[text() = '#{start}']")
     secondLetterBox = find_element(:xpath, "//header[text() = '#{stop}']")
 
+    #finds what the new order should be
     orderOpt1 = "//header[text() = '#{start}']/../following-sibling::div/header[text() = '#{stop}']"
     orderOpt2 = "//header[text() = '#{stop}']/../following-sibling::div/header[text() = '#{start}']"
-    #finds what the new order should be
     orderNew = if element_displayed?(find_element(:xpath, orderOpt1)) do
                     orderOpt2
                   else
                     orderOpt1
                   end
-    #click(firstLetterBox)
+                  
     move_to(firstLetterBox, 1, 1)
     :timer.sleep(1000)
     mouse_down()
