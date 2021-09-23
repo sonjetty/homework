@@ -2,8 +2,8 @@ defmodule DownloadTest do
   # Import helpers
   use Hound.Helpers
   use ExUnit.Case
+  
   Code.require_file("reuseableCode/reuseables.exs")
-
 
   # Start hound session and destroy when tests are run
   hound_session(driver: %{
