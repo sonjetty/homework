@@ -17,9 +17,6 @@ defmodule DownloadTest do
     }}
   )
 
-
-
-  #I was not able to get this test working, it clicks on the first element as expected but then seems to use my actual cursor location.  I have written similar tests in the past using wdio.
   test "download and verify file exists" do
 
     navigate_to "https://the-internet.herokuapp.com/download"
